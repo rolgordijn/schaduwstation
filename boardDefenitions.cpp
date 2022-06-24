@@ -3,12 +3,12 @@
 MCP23017 mcp1 = MCP23017(0x20);
 MCP23017 mcp0 = MCP23017(0x27);
 
-Wissel wissel1 = Wissel(new MCP23017IO(&mcp0, 0, OUTPUT) ,  new MCP23017IO(&mcp0, 1, OUTPUT),1);
-Wissel wissel2 = Wissel(new MCP23017IO(&mcp0, 2, OUTPUT) ,  new MCP23017IO(&mcp0, 3, OUTPUT),2);
-Wissel wissel3 = Wissel(new MCP23017IO(&mcp0, 4, OUTPUT) ,  new MCP23017IO(&mcp0, 5, OUTPUT),3);
-Wissel wissel4 = Wissel(new MCP23017IO(&mcp0, 6, OUTPUT) ,  new MCP23017IO(&mcp0, 7, OUTPUT),4);
-Wissel wissel5 = Wissel(new MCP23017IO(&mcp0, 8, OUTPUT) ,  new MCP23017IO(&mcp0, 9, OUTPUT),5);
-Wissel wissel6 = Wissel(new MCP23017IO(&mcp0, 10, OUTPUT) ,  new MCP23017IO(&mcp0, 11, OUTPUT),6);
+Wissel wissel1 = Wissel(new MCP23017IO(&mcp0, 1, OUTPUT) ,  new MCP23017IO(&mcp0, 0, OUTPUT),1);
+Wissel wissel2 = Wissel(new MCP23017IO(&mcp0, 3, OUTPUT) ,  new MCP23017IO(&mcp0, 2, OUTPUT),2);
+Wissel wissel3 = Wissel(new MCP23017IO(&mcp0, 5, OUTPUT) ,  new MCP23017IO(&mcp0, 4, OUTPUT),3);
+Wissel wissel4 = Wissel(new MCP23017IO(&mcp0, 7, OUTPUT) ,  new MCP23017IO(&mcp0, 6, OUTPUT),4);
+Wissel wissel5 = Wissel(new MCP23017IO(&mcp0, 9, OUTPUT) ,  new MCP23017IO(&mcp0, 8, OUTPUT),5);
+Wissel wissel6 = Wissel(new MCP23017IO(&mcp0, 11, OUTPUT) ,  new MCP23017IO(&mcp0, 10, OUTPUT),6);
 
 MCP23017IO led1 = MCP23017IO(&mcp0, 15, OUTPUT);
 MCP23017IO led2 = MCP23017IO(&mcp0, 14, OUTPUT);
@@ -58,6 +58,6 @@ Track track6 = Track(&wissel6, &bezetmelder6, &led6, &relay6, &knop6, 6);
 BasicIO intBezetmelders = BasicIO(2, INPUT);
 BasicIO intDrukknop = BasicIO(3, INPUT);
 
-Wissel * wissels[5] = {&wissel1, &wissel2, &wissel3, &wissel4, &wissel5};
+Wissel * wissels[6] = {&wissel1, &wissel2, &wissel3, &wissel4, &wissel5, &wissel6};
 IO * relays[8] = {&relay1, &relay2, &relay3, &relay4, &relay5, &relay6, &relay7, &relay8};
 Track * sporen[6]  {&track1, &track2, &track3, &track4 , &track5, &track6};

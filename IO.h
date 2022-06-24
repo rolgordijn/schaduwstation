@@ -8,6 +8,7 @@ class IO {
     uint8_t pin;
     bool tris;
     bool state;
+    bool changed;
   public:
     IO() {
     }
@@ -22,6 +23,10 @@ class IO {
     virtual void setPinMode(bool dir) =   0;
     virtual bool getPinMode (void) = 0;
 
+    bool pinStateChanged(void){
+      return changed;
+    }
+
 };
 
 
@@ -31,6 +36,8 @@ class BasicIO : public IO {
 
     BasicIO(): IO() {
     }
+
+    
 
     
     BasicIO(int pin, int tris, int val): IO() {
@@ -56,7 +63,10 @@ class BasicIO : public IO {
     }
 
     bool getValue() {
-      return digitalRead(pin);
+      bool val = digitalRead(pin);
+      changed = val != state;
+      state = val; 
+      return state;
     }
 
     void setValue(bool val) {
@@ -115,7 +125,10 @@ class MCP23017IO : public IO {
     }
 
     bool getValue() {
-      return ic->digitalRead(pin);
+      bool val = ic->digitalRead(pin);
+      changed = val != state;
+      state = val; 
+      return state;
     }
 
     void setValue(bool val) {
@@ -156,6 +169,9 @@ class VirtualIO : public IO {
     }
 
     bool getValue() {
+      bool val = state;
+      changed = val != state;
+      state = val; 
       return state;
     }
 

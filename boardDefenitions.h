@@ -66,7 +66,7 @@ extern Track track6;
 extern BasicIO intBezetmelders;
 extern BasicIO intDrukknop;
 
-extern Wissel * wissels[5]; 
+extern Wissel * wissels[6]; 
 extern IO * relays[8] ;
 
 extern Track * sporen[6] ; 
