@@ -1,0 +1,3 @@
+# schaduwstation
+
+project to control staging yard at a local model railroad club with an Arduino uno on a custom PCB with in and outputs for buttons, LED's, turnouts, ... 
