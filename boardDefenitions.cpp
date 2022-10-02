@@ -61,3 +61,4 @@ BasicIO intDrukknop = BasicIO(3, INPUT);
 Wissel * wissels[6] = {&wissel1, &wissel2, &wissel3, &wissel4, &wissel5, &wissel6};
 IO * relays[8] = {&relay1, &relay2, &relay3, &relay4, &relay5, &relay6, &relay7, &relay8};
 Track * sporen[6]  {&track1, &track2, &track3, &track4 , &track5, &track6};
+IO * bezetmelders[8]= {&bezetmelder1,&bezetmelder2,&bezetmelder3,&bezetmelder4,&bezetmelder5,&bezetmelder6, &bezetmelder7,&bezetmelder8};

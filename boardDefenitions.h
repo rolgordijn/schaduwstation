@@ -42,6 +42,9 @@ extern MCP23017IO bezetmelder7;
 extern MCP23017IO bezetmelder8;
 
 
+extern IO * bezetmelders[8];
+
+
 extern BasicIO led5;
 extern BasicIO led6;
 extern BasicIO led7;
